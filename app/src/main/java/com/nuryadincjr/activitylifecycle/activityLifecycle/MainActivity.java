@@ -1,12 +1,10 @@
 package com.nuryadincjr.activitylifecycle.activityLifecycle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nuryadincjr.activitylifecycle.R;
 import com.nuryadincjr.activitylifecycle.databinding.ActivityMainBinding;

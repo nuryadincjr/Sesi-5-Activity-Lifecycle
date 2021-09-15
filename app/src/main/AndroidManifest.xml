@@ -10,16 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifecycle" >
         <activity
-            android:name=".activityLifecycle.SecondActyvity"
-            android:exported="true" />
-        <activity
-            android:name=".activityLifecycle.MainActivity"
+            android:name=".fragmentLifecycle.MainActivity2"
             android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activityLifecycle.SecondActyvity"
+            android:exported="true" />
+        <activity
+            android:name=".activityLifecycle.MainActivity"
+            android:exported="true" >
+
         </activity>
     </application>
 
