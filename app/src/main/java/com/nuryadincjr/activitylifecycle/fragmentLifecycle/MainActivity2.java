@@ -1,15 +1,11 @@
 package com.nuryadincjr.activitylifecycle.fragmentLifecycle;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.nuryadincjr.activitylifecycle.R;
 import com.nuryadincjr.activitylifecycle.databinding.ActivityMain2Binding;
 
@@ -35,6 +31,9 @@ public class MainActivity2 extends AppCompatActivity {
                     break;
                 case R.id.btnAbout:
                     getFragmentPage(new AboutFragment());
+                    break;
+                case R.id.btnChat:
+                    getFragmentPage(new ChatFragment());
                     break;
             }
             return true;
