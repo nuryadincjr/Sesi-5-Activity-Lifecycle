@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifecycle">
-
         <activity
-            android:name=".activitiesAndIntent.ActivitiesAndIntentActivity"
+            android:name=".delightfulUserExperiences.NinePatchFileActivity"
             android:exported="true" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activitiesAndIntent.ActivitiesAndIntentActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".activitiesAndIntent.ImplicitIntentActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activitiesAndIntent.ExplicitIntentActivity"
             android:exported="true" />

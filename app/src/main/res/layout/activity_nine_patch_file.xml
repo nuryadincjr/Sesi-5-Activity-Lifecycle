@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".delightfulUserExperiences.NinePatchFileActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/bubble"
+        android:padding="16dp"
+        android:text="Ini dibangun dengan gambar PNG biasa\nKelemahannya ketika direnggangkan\nakan mengubah gaya gambar." />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/bubble2"
+        android:padding="16dp"
+        android:text="Ini dibangun dengan gambar 9.PNG\n terlihat perbedaan ketika dirnggankan\ntampilan gambar sangat bagus." />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/layer_list" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_gradient"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Ini dibangun dengan shape dan gradient drawable." />
+
+    <ImageButton
+        android:id="@+id/ibTransition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/transition"
+        tools:ignore="SpeakableTextPresentCheck" />
+</LinearLayout>
