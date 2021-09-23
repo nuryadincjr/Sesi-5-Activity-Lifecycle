@@ -10,19 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifecycle">
         <activity
+            android:name=".stadyCaseSesion7.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.TableLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.RelativeLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.LinierLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.ConstainLayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".delightfulUserExperiences.NinePatchFileActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activitiesAndIntent.ActivitiesAndIntentActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".activitiesAndIntent.ImplicitIntentActivity"
             android:exported="true" />
