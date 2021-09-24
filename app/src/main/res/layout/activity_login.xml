@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="28dp"
     tools:context=".stadyCaseSesion7.LoginActivity">
 
@@ -43,11 +42,12 @@
 
     <Button
         android:id="@+id/btnGoogle"
-        android:layout_width="160dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnLogin"
         android:layout_alignParentStart="true"
         android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/btnFacebook"
         android:text="@string/google" />
 
     <Button

@@ -4,41 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:stretchColumns="1"
     tools:context=".layout.TableLayoutActivity">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnOne"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button 1" />
-
-        <Button
-            android:id="@+id/btnTwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button 1" />
-
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Open..."
+            android:padding="3dip" />
+        <TextView
+            android:text="Ctrl-O"
+            android:gravity="right"
+            android:padding="3dip" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Save..."
+            android:padding="3dip" />
+        <TextView
+            android:text="Ctrl-S"
+            android:gravity="right"
+            android:padding="3dip" />
+    </TableRow>
 
-        <Button
-            android:id="@+id/btnOne2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button 1" />
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Save As..."
+            android:padding="3dip" />
+        <TextView
+            android:text="Ctrl-Shift-S"
+            android:gravity="right"
+            android:padding="3dip" />
+    </TableRow>
 
-        <Button
-            android:id="@+id/btnTwo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button 1" />
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
 
+    <TableRow>
+        <TextView
+            android:text="X"
+            android:padding="3dip" />
+        <TextView
+            android:text="Import..."
+            android:padding="3dip" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="X"
+            android:padding="3dip" />
+        <TextView
+            android:text="Export..."
+            android:padding="3dip" />
+        <TextView
+            android:text="Ctrl-E"
+            android:gravity="right"
+            android:padding="3dip" />
+    </TableRow>
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Quit"
+            android:padding="3dip" />
     </TableRow>
 </TableLayout>
