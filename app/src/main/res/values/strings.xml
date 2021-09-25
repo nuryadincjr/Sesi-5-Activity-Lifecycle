@@ -15,7 +15,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="login">Login</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
@@ -23,4 +22,14 @@
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="button_1">Button 1</string>
+    <string name="to">To</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="linear_layout">Linier Layout</string>
+    <string name="count">Count</string>
+    <string name="zero">Zero</string>
+    <string name="toast">Toast</string>
+    <string name="no">0</string>
+    <string name="constain_layout">Constain Layout</string>
 </resources>
