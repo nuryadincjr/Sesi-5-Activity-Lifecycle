@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.nuryadincjr.activitylifecycle.R;
 import com.nuryadincjr.activitylifecycle.databinding.ActivitySampleRecycleviewBinding;
@@ -30,7 +32,7 @@ public class SampleRecycleviewActivity extends AppCompatActivity {
         data.add("Superman");
         data.add("Gatot Kaca");
 
-        SampleAdapter adapter = new SampleAdapter(data);
+        SampleAdapter adapter = new SampleAdapter(this, data);
         binding.rvHero.setLayoutManager(new LinearLayoutManager(this));
 //        binding.rvHero.setLayoutManager(new GridLayoutManager(this, 2));
 

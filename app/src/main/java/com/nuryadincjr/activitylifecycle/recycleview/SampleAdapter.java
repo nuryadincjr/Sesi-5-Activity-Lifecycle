@@ -1,8 +1,11 @@
 package com.nuryadincjr.activitylifecycle.recycleview;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +17,12 @@ import java.util.ArrayList;
 public class SampleAdapter extends RecyclerView.Adapter<SampleViewHolder> {
 
     private ArrayList<String> data;
+    private Context context;
 
-    public SampleAdapter(ArrayList<String> data) {
+
+    public SampleAdapter(Context context, ArrayList<String> data) {
         this.data = data;
+        this.context = context;
     }
 
     @NonNull
@@ -30,7 +36,14 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull SampleViewHolder holder, int position) {
         String item = data.get(position);
-        holder.setDataToView(item);
+        holder.setDataToView(item, position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, item +" ke " + String.valueOf(position),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
