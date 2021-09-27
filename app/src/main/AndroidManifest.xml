@@ -10,15 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivityLifecycle">
         <activity
+            android:name=".layout.ActionActivity"
+            android:exported="true" />
+        <activity
             android:name=".recycleview.SampleRecycleviewActivity"
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".stadyCaseSesion7.LoginActivity"
@@ -34,9 +35,7 @@
             android:exported="true" />
         <activity
             android:name=".layout.ConstainLayoutActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".delightfulUserExperiences.NinePatchFileActivity"
             android:exported="true" />

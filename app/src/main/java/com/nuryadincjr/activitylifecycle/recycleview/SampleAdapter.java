@@ -1,7 +1,6 @@
 package com.nuryadincjr.activitylifecycle.recycleview;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nuryadincjr.activitylifecycle.databinding.ItemSampleBinding;
+import com.nuryadincjr.activitylifecycle.pojo.Hiros;
 
 import java.util.ArrayList;
 
 public class SampleAdapter extends RecyclerView.Adapter<SampleViewHolder> {
 
-    private ArrayList<String> data;
-    private Context context;
+    private final ArrayList<Hiros> data;
+    private final Context context;
 
-
-    public SampleAdapter(Context context, ArrayList<String> data) {
+    public SampleAdapter(Context context, ArrayList<Hiros> data) {
         this.data = data;
         this.context = context;
     }
@@ -35,20 +34,15 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull SampleViewHolder holder, int position) {
-        String item = data.get(position);
-        holder.setDataToView(item, position);
+        String id = data.get(position).getId();
+        String name = data.get(position).getNama();
+        holder.setDataToView(id, name, position);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, item +" ke " + String.valueOf(position),Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.itemView.setOnClickListener(view -> Toast.makeText(context, id +" ke " + String.valueOf(position),Toast.LENGTH_SHORT).show());
     }
 
     @Override
     public int getItemCount() {
-        Log.d("TAG", String.valueOf(data.size()));
         return data.size();
     }
 }
