@@ -21,7 +21,9 @@
         android:id="@+id/btnCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah" />
+        android:text="Tambah"
+        android:enabled="true"
+        android:backgroundTint="@color/selector_color" />
 
     <Button
         android:id="@+id/btnGoToCount"
