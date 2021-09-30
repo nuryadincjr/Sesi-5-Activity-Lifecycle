@@ -3,9 +3,13 @@ package com.nuryadincjr.activitylifecycle.notifications;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -20,9 +24,15 @@ import com.nuryadincjr.activitylifecycle.databinding.ActivityNotfyBinding;
 public class NotfyActivity extends AppCompatActivity {
 
     private ActivityNotfyBinding binding;
-    private static final String CHANNEL_ID = "0";
+    private static final String CHANNEL_ID = "primary_notification_channel";
     private static final int NOTIFICATION_ID = 0;
-    NotificationManagerCompat notificationManager;
+    private NotificationManager notificationManager;
+
+    private static final String ACTION_UPDATE_NOTIFICATION =
+            "com.example.android.notifyme.ACTION_UPDATE_NOTIFICATION";
+
+    private NotificationReceiver mReceiver = new NotificationReceiver();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +43,9 @@ public class NotfyActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         createNotificationChannel();
 
-        notificationManager = NotificationManagerCompat.from(this);
-
         setBtnFocuse(true, false, false);
+
+        registerReceiver(mReceiver,new IntentFilter(ACTION_UPDATE_NOTIFICATION));
 
         binding.btnNotify.setOnClickListener(view -> {
             sendNotification();
@@ -53,8 +63,23 @@ public class NotfyActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(mReceiver);
+        super.onDestroy();
+    }
+
     public void sendNotification() {
-        notificationData("Nuryadin Abutani", "Notifikasi baru");
+        Intent updateIntent = new Intent(ACTION_UPDATE_NOTIFICATION);
+        PendingIntent updatePendingIntent = PendingIntent.getBroadcast
+                (this, NOTIFICATION_ID, updateIntent,
+                        PendingIntent.FLAG_IMMUTABLE);
+
+
+
+        getNotificationBuilder().addAction(R.drawable.author, "Update Notification",
+                updatePendingIntent);
+        notificationManager.notify(NOTIFICATION_ID, getNotificationBuilder().build());
     }
 
     public void updateNotification() {
@@ -66,15 +91,18 @@ public class NotfyActivity extends AppCompatActivity {
     }
 
     private void createNotificationChannel() {
+        notificationManager = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = getString(R.string.app_name);
-            String description = getString(R.string.app_name);
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
+                    getString(R.string.app_name), NotificationManager.IMPORTANCE_HIGH);
+
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED);
+            channel.enableVibration(true);
+            channel.setDescription("Notification from Apps");
+            notificationManager.createNotificationChannel(channel);        }
     }
 
     public Bitmap bitmap(int img) {
@@ -110,4 +138,23 @@ public class NotfyActivity extends AppCompatActivity {
         binding.btnCencel.setEnabled(b3);
     }
 
+    private NotificationCompat.Builder getNotificationBuilder(){
+        NotificationCompat.Builder notifyBuilder = new
+                NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle("You've been notified!")
+                .setContentText("This is your notification text.")
+                .setSmallIcon(R.drawable.author);
+        return notifyBuilder;
+    }
+
+    public class NotificationReceiver extends BroadcastReceiver {
+
+        public NotificationReceiver() {
+        }
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            updateNotification();
+        }
+    }
 }
